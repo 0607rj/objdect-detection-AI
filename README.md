@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Object Detection App
+
+A Next.js web application for real-time object detection using TensorFlow.js and COCO-SSD model. Detect and identify objects in real-time through your webcam.
+
+## 🚀 Live Demo
+
+Try the live application here: [https://object-detection-ai.netlify.app/](https://object-detection-ai.netlify.app/)
+
+## Features
+
+- 🎥 **Real-time Webcam Streaming** - Live video feed from your webcam
+- 🔍 **Object Detection** - Powered by TensorFlow.js COCO-SSD model
+- ⚡ **Fast Inference** - Browser-based processing with GPU acceleration
+- 🎨 **Modern UI** - Built with React and Tailwind CSS
+- 📱 **Responsive Design** - Works on desktop and mobile devices
+
+## Tech Stack
+
+- **Framework** - [Next.js](https://nextjs.org/) 16.1.6
+- **React** - 19.2.3
+- **ML/AI** - TensorFlow.js with COCO-SSD pre-trained model
+- **Styling** - Tailwind CSS
+- **Video Capture** - React Webcam
+- **Linting** - ESLint
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn package manager
+- Modern web browser with webcam access
+
+### Installation
+
+1. Clone or navigate to the project directory:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd obj-detection
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Allow Webcam Access** - Grant permission when prompted
+2. **Start Detection** - The object detection model will load and begin analyzing video
+3. **View Results** - Detected objects appear with bounding boxes and confidence scores
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+obj-detection/
+├── app/
+│   ├── layout.js          # Root layout component
+│   ├── page.js            # Home page
+│   └── globals.css        # Global styles
+├── components/
+│   └── object-detection.js # Main object detection component
+├── utils/
+│   └── render-prediction.js # Utility for rendering predictions
+├── public/                # Static assets
+├── next.config.mjs       # Next.js configuration
+├── tailwind.config.cjs   # Tailwind CSS configuration
+└── package.json          # Dependencies and scripts
+```
 
-## Deploy on Vercel
+## Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Model Information
+
+This project uses the **COCO-SSD** (Common Objects in Context - Single Shot Detector) pre-trained model which can detect:
+- People, animals, vehicles
+- Furniture, appliances, food
+- Sports equipment, and more
+
+The model is automatically downloaded on first use and cached in the browser.
+
+## Performance
+
+- Model inference runs in real-time in the browser
+- No server-side processing needed
+- GPU acceleration available on supported devices
+- Optimized for modern browsers (Chrome, Firefox, Safari, Edge)
+
+## Browser Compatibility
+
+- Chrome/Chromium 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## Troubleshooting
+
+### Webcam not working
+- Check browser permissions for camera access
+- Ensure HTTPS (required for webcam access in production)
+- Try a different browser
+
+### Slow detection
+- Check your internet connection for model download
+- Close other browser tabs
+- Ensure GPU acceleration is enabled
+
+## Future Enhancements
+
+- Add custom model support
+- Image upload detection
+- Detection history/logging
+- Performance metrics dashboard
+- Multi-model comparison
+
+## Resources
+
+- [TensorFlow.js Documentation](https://js.tensorflow.org/)
+- [COCO-SSD Model](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Webcam](https://github.com/mozmorris/react-webcam)
+
+## License
+
+This project is open source and available under the MIT License.
